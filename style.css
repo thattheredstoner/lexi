@@ -9,15 +9,13 @@
 	 height: 100%;
 }
  ::-webkit-scrollbar {
-	 width: 10px;
+	 display:none
 }
  ::-webkit-scrollbar-track {
-	 border-radius: 10px;
-	 background-color: rgba(25, 147, 147, 0.1);
+	 display: none;
 }
  ::-webkit-scrollbar-thumb {
-	 border-radius: 10px;
-	 background-color: rgba(25, 147, 147, 0.2);
+	 display: none;
 }
  .chat-thread {
 	 margin: 24px auto 0 auto;
@@ -25,6 +23,7 @@
 	 list-style: none;
 	 overflow-y: scroll;
 	 overflow-x: hidden;
+	 margin-bottom: 10%;
 }
  .chat-thread li, .chat-thread ul {
 	 position: relative;
@@ -102,7 +101,6 @@
  @media all and (max-width: 767px) {
 	 .chat-thread {
 		 width: 90%;
-		 height: 260px;
 	}
 	 .chat-window {
 		 left: 5%;
@@ -113,7 +111,6 @@
  @media all and (min-width: 768px) {
 	 .chat-thread {
 		 width: 50%;
-		 height: 320px;
 	}
 	 .chat-window {
 		 left: 25%;
