@@ -16,7 +16,10 @@ chatWindow.onsubmit = function (e) {
         crossDomain: true,
         dataType: 'json',
         complete: function(response){
-            var res = response.responseText.replace("callback('", '').replace("')", '').replace("\\", '');
+            var res = response.responseText.replace("callback('", '').replace("')", '');
+            while(res.indexOf("\\") > -1) {
+                res = res.replace("\\", '');
+            }
             handleMessage2(res)
         }
    	});
@@ -43,5 +46,9 @@ function handleMessage2 (event) {
     // Add message to chat thread and scroll to bottom
     chatNewThread.appendChild(chatNewMessage);
     chatThread.appendChild(chatNewThread);
-    chatThread.scrollTop = chatThread.scrollHeight;
+    pageScroll();
+}
+function pageScroll() {
+    window.scrollBy(0,1);
+    scrolldelay = setTimeout(pageScroll,10);
 }
