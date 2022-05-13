@@ -16,7 +16,7 @@ chatWindow.onsubmit = function (e) {
         crossDomain: true,
         dataType: 'json',
         complete: function(response){
-            var res = response.responseText.replace("callback('", '').replace("')", '').replace(/[^A-Za-z0-9.]/, '');
+            var res = response.responseText.replace("callback('", '').replace("')", '').replace("\\", '');
             handleMessage2(res)
         }
    	});
